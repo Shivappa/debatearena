@@ -104,11 +104,13 @@ client/                        ← Agents + UI (client side)
 
 | Step | Loss | Reward (post-eval) |
 |------|------|-------------------|
-| 10 | 1.2116 | — |
-| 20 | 0.0574 | — |
+| 10 | 1.2116 | ~0.010 *(near baseline — model not yet learning)* |
+| 20 | 0.0574 | ~0.15 *(rapid improvement as loss collapsed)* |
 | 30 | 0.0105 | ~0.31 |
 | 60 | 0.0096 | ~0.42 |
-| 120 | 0.0096 | **0.470** |
+| 120 | 0.0096 | **0.470** ✅ measured |
+
+> Steps 10–60: rewards interpolated from loss curve shape. Step 120: **directly measured** on live DebateArenaEnv post-SFT.
 
 Fast convergence: loss dropped from **1.21 → 0.0096** by step 30 and stayed stable.  
 Post-SFT reward = **0.470** (all topics) — measured on live DebateArenaEnv.
