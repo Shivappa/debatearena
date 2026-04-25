@@ -68,7 +68,7 @@ from server.tasks import TOPIC_BANK
 
 API_BASE_URL = os.environ.get("API_BASE_URL", "https://router.huggingface.co/v1")
 API_KEY      = os.environ.get("API_KEY", os.environ.get("HF_TOKEN", ""))
-MODEL_NAME   = os.environ.get("MODEL_NAME", "gpt-4o-mini")
+MODEL_NAME   = os.environ.get("MODEL_NAME", "Shivacode/debate-arena-llama3-8b")
 ENV_BASE_URL = os.environ.get("ENV_BASE_URL", "http://localhost:8000")
 TOPIC_LEVEL  = os.environ.get("TOPIC_LEVEL", "easy")
 BENCHMARK    = "debatearena"
