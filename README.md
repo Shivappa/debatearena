@@ -24,7 +24,7 @@ app_port: 7860
 | 🤖 Fine-tuned Model | [Shivacode/debate-arena-llama3-8b](https://huggingface.co/Shivacode/debate-arena-llama3-8b) |
 | 💻 GitHub Repo | [Shivappa/debatearena](https://github.com/Shivappa/debatearena) |
 | 📓 Training Notebook | [training_colab.ipynb](./training_colab.ipynb) |
-| ▶️ Run Notebook (HF viewer) | [Open on HuggingFace](https://huggingface.co/spaces/Shivacode/debatearena/blob/main/training_colab.ipynb) |
+| ▶️ Run in Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/#fileId=https%3A//huggingface.co/spaces/Shivacode/debatearena/blob/main/training_colab.ipynb) |
 
 ---
 
