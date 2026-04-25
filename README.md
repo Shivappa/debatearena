@@ -1,3 +1,14 @@
+---
+title: DebateArenaEnv
+emoji: ⚖️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+license: mit
+app_port: 7860
+---
+
 # ⚖️ DebateArenaEnv — Multi-Agent Epistemic Reasoning & Fact-Checking
 
 > **Themes**: Multi-Agent Interactions · Self-Improving Agent Systems · Wild Card
@@ -11,8 +22,6 @@
 |----------|------|
 | HuggingFace Space | *(add after deployment)* |
 | Training Notebook (Colab) | [training_colab.ipynb](./training_colab.ipynb) |
-| Pitch Video (<2 min) | *(add after recording)* |
-| Blog / Writeup | *(add after writing)* |
 
 ---
 
