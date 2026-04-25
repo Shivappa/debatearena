@@ -40,17 +40,27 @@ app_port: 7860
 
 ---
 
-## 1. The Problem
+## 1. The Problem — Why This Matters
 
-**Misinformation is the defining crisis of our era.** Current LLMs fail at three core epistemic skills:
+**Misinformation is the defining crisis of our era.** Billions of people now rely on LLMs for medical decisions, legal questions, and civic information. Yet current LLMs systematically fail at three core epistemic skills:
 
 - **Factual grounding** — they cite plausible-sounding but false facts (hallucination)
 - **Belief updating** — they double-down on wrong positions instead of updating under counter-evidence
-- **Logical coherence** — they generate text that sounds structured but lacks valid reasoning chains
+- **Logical coherence** — they generate text that *sounds* structured but lacks valid reasoning chains
 
-`DebateArenaEnv` is an RL training environment specifically designed to train LLMs on **epistemic reasoning**.
+This is not a knowledge problem — it's a **reasoning behaviour problem**. You can't fix it with more pretraining data. You need to train the *behaviour* of reasoning correctly under pressure.
+
+**Who would care?**
+- 🏥 **Healthcare** — A model that hallucinates drug interactions causes real harm
+- ⚖️ **Legal & policy** — A model that can't update beliefs under counter-evidence is dangerous in advisory roles
+- 📰 **Media & fact-checking** — Automated fact-checking pipelines need models that distinguish verified from plausible
+- 🎓 **Education** — Students need AI tutors that model *how to reason*, not just what to conclude
+
+`DebateArenaEnv` is an RL training environment specifically designed to train the **epistemic reasoning behaviours** that make LLMs trustworthy — using structured debate as the training signal.
 
 > *"A model that debates well, hallucinates less."*
+>
+> Our fine-tuned model improved from reward **0.010 → 0.470** (SFT) on a rubric that directly penalises hallucination and rewards belief updating — a **47× improvement** over the untrained baseline.
 
 ---
 
