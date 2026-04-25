@@ -2,7 +2,7 @@
 
 *How we built a multi-agent RL environment that teaches Llama-3 to debate, fact-check, and update its beliefs — reducing hallucination through epistemic reasoning.*
 
-**OpenEnv Hackathon India 2026** | [Live Demo](https://huggingface.co/spaces/Shivacode/debatearena) · [Model](https://huggingface.co/Shivacode/debate-arena-llama3-8b) · [Notebook](https://colab.research.google.com/#fileId=https%3A//huggingface.co/spaces/Shivacode/debatearena/blob/main/training_colab.ipynb)
+**Meta Hugging Face OpenEnv X Scaler School of Technology Hackathon India 2026** | [Live Demo](https://huggingface.co/spaces/Shivacode/debatearena) · [Model](https://huggingface.co/Shivacode/debate-arena-llama3-8b) · [Notebook](https://colab.research.google.com/#fileId=https%3A//huggingface.co/spaces/Shivacode/debatearena/blob/main/training_colab.ipynb)
 
 ---
 

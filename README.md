@@ -12,7 +12,7 @@ app_port: 7860
 # ⚖️ DebateArenaEnv — Multi-Agent Epistemic Reasoning & Fact-Checking
 
 > **Themes**: Multi-Agent Interactions · Self-Improving Agent Systems · Wild Card
-> **OpenEnv Hackathon India 2026** | Built with OpenEnv + FastAPI + Unsloth + Llama-3.1-8B
+> **Meta Hugging Face OpenEnv X Scaler School of Technology Hackathon India 2026** | Built with OpenEnv + FastAPI + Unsloth + Llama-3.1-8B
 
 ---
 
