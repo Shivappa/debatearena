@@ -1,0 +1,100 @@
+name: debatearena
+version: "1.0.0"
+entry_point: "server.env:DebateArenaEnv"
+description: >
+  Multi-Agent Epistemic Reasoning & Fact-Checking Arena.
+  A Proposer agent defends a motion with evidence while a Challenger rebuts.
+  An automated Judge scores factual accuracy, logical coherence, belief-updating,
+  and penalises hallucinations and fallacies.
+  An adaptive curriculum escalates difficulty after Proposer wins — combining
+  Theme #1 (Multi-Agent), Theme #4 (Self-Improvement), and Theme #5 (Wild Card).
+
+themes:
+  - multi-agent
+  - self-improvement
+  - wild-card
+
+authors:
+  - name: "DebateArena Team"
+
+environment:
+  entrypoint: server/app.py
+  base_class: DebateArenaEnv
+  api:
+    reset: new_episode
+    step: submit_argument
+    state: get_state
+  mcp_tools:
+    - new_episode
+    - topic_info
+    - submit_argument
+    - submit_rebuttal
+    - verify_fact
+    - refine_position
+    - concede_point
+    - end_debate
+    - get_state
+    - curriculum
+
+agents:
+  - role: proposer
+    description: >
+      Defends the motion using verified evidence and logical structure.
+      Rewarded for factual accuracy, evidence keyword coverage, logical
+      coherence, belief updating under counter-evidence, and graceful
+      concessions. Penalised for hallucinations and logical fallacies.
+    tools:
+      - new_episode
+      - topic_info
+      - verify_fact
+      - submit_argument
+      - refine_position
+      - concede_point
+      - end_debate
+  - role: challenger
+    description: >
+      Rebuts the Proposer with counter-evidence and fallacy exposure.
+    tools:
+      - topic_info
+      - verify_fact
+      - submit_rebuttal
+      - end_debate
+
+reward:
+  type: composable_rubric
+  clamp: [0.01, 0.99]
+  rubrics:
+    - name: factual_accuracy      # weight 0.35
+    - name: evidence_quality      # weight 0.20
+    - name: logical_coherence     # weight 0.15
+    - name: belief_updating       # weight +0.10
+    - name: concession_credit     # weight +0.05
+    - name: hallucination_penalty # weight -0.30 per offence
+    - name: fallacy_penalty       # weight -0.20 per offence
+    - name: step_penalty          # weight -0.01 per round
+
+tasks:
+  - id: easy
+    difficulty: easy
+    domain: "AI Policy & Media"
+    max_rounds: 4
+  - id: medium
+    difficulty: medium
+    domain: "AI Strategy & National Policy"
+    max_rounds: 6
+  - id: hard
+    difficulty: hard
+    domain: "AI Ethics & High-Stakes Deployment"
+    max_rounds: 8
+
+curriculum:
+  type: adaptive
+  escalation_threshold: 0.70
+  min_episodes: 3
+  levels: [easy, medium, hard]
+
+links:
+  training_notebook: training_colab.ipynb
+  eval_script: client/evaluate.py
+  gradio_ui: client/ui.py
+  server_app: server/app.py

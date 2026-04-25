@@ -1,0 +1,22 @@
+{"topic_id": "easy", "winner": "challenger", "reward": 0.12, "success": false, "steps": 1, "rewards": [0.12]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "medium", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "hard", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "medium", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "hard", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "medium", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "hard", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 1, "rewards": [0.01]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 3, "rewards": [0.01, 0.01, 0.01]}
+{"topic_id": "easy", "winner": "?", "reward": 0.01, "success": false, "steps": 5, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01]}
+{"topic_id": "easy", "winner": "challenger", "reward": 0.2567, "success": false, "steps": 6, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01, 0.2567]}
+{"topic_id": "easy", "winner": "challenger", "reward": 0.2267, "success": false, "steps": 6, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01, 0.2267]}
+{"topic_id": "easy", "winner": "challenger", "reward": 0.33333333333333337, "success": false, "steps": 5, "rewards": [0.01, 0.01, 0.01, 0.01, 0.33333333333333337]}
+{"topic_id": "medium", "winner": "challenger", "reward": 0.2733333333333333, "success": false, "steps": 6, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01, 0.2733333333333333]}
+{"topic_id": "hard", "winner": "proposer", "reward": 0.632857142857143, "success": true, "steps": 6, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01, 0.632857142857143]}
+{"topic_id": "easy", "winner": "challenger", "reward": 0.33333333333333337, "success": false, "steps": 5, "rewards": [0.01, 0.01, 0.01, 0.01, 0.33333333333333337]}
+{"topic_id": "medium", "winner": "challenger", "reward": 0.30666666666666664, "success": false, "steps": 6, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01, 0.30666666666666664]}
+{"topic_id": "hard", "winner": "proposer", "reward": 0.6828571428571428, "success": true, "steps": 6, "rewards": [0.01, 0.01, 0.01, 0.01, 0.01, 0.6828571428571428]}

@@ -1,0 +1,38 @@
+[
+  {
+    "agent": "baseline",
+    "topic": "easy",
+    "reward": 0.01,
+    "breakdown": "Rubric Breakdown:\n  [factual_accuracy         ] ++0.000  \u2014 0/1 cited facts are correct.\n  [evidence_quality         ] ++0.000  \u2014 0/6 evidence keywords present.\n  [logical_coherence        ] ++0.000  \u2014 0 logical connectives detected.\n  [belief_updating          ] ++0.000  \u2014 Position was not updated.\n  [concession_credit        ] ++0.000  \u2014 No concession made.\n  [hallucination_penalty    ] -0.300  \u2014 1 hallucinated facts penalised.\n  [fallacy_penalty          ] -0.200  \u2014 1 logical fallacies penalised.\n  [step_penalty             ] -0.030  \u2014 3 rounds used (\u22120.03 step penalty)."
+  },
+  {
+    "agent": "optimal",
+    "topic": "easy",
+    "reward": 0.6633,
+    "breakdown": "Rubric Breakdown:\n  [factual_accuracy         ] ++0.350  \u2014 2/2 cited facts are correct.\n  [evidence_quality         ] ++0.033  \u2014 1/6 evidence keywords present.\n  [logical_coherence        ] ++0.150  \u2014 7 logical connectives detected.\n  [belief_updating          ] ++0.100  \u2014 Position was updated under counter-evidence.\n  [concession_credit        ] ++0.050  \u2014 Sub-point conceded gracefully.\n  [hallucination_penalty    ] +-0.000  \u2014 No hallucinations detected.\n  [fallacy_penalty          ] +-0.000  \u2014 No fallacies detected.\n  [step_penalty             ] -0.030  \u2014 3 rounds used (\u22120.03 step penalty)."
+  },
+  {
+    "agent": "baseline",
+    "topic": "medium",
+    "reward": 0.01,
+    "breakdown": "Rubric Breakdown:\n  [factual_accuracy         ] ++0.000  \u2014 0/1 cited facts are correct.\n  [evidence_quality         ] ++0.000  \u2014 0/8 evidence keywords present.\n  [logical_coherence        ] ++0.000  \u2014 0 logical connectives detected.\n  [belief_updating          ] ++0.000  \u2014 Position was not updated.\n  [concession_credit        ] ++0.000  \u2014 No concession made.\n  [hallucination_penalty    ] -0.300  \u2014 1 hallucinated facts penalised.\n  [fallacy_penalty          ] -0.200  \u2014 1 logical fallacies penalised.\n  [step_penalty             ] -0.030  \u2014 3 rounds used (\u22120.03 step penalty)."
+  },
+  {
+    "agent": "optimal",
+    "topic": "medium",
+    "reward": 0.655,
+    "breakdown": "Rubric Breakdown:\n  [factual_accuracy         ] ++0.350  \u2014 2/2 cited facts are correct.\n  [evidence_quality         ] ++0.025  \u2014 1/8 evidence keywords present.\n  [logical_coherence        ] ++0.150  \u2014 7 logical connectives detected.\n  [belief_updating          ] ++0.100  \u2014 Position was updated under counter-evidence.\n  [concession_credit        ] ++0.050  \u2014 Sub-point conceded gracefully.\n  [hallucination_penalty    ] +-0.000  \u2014 No hallucinations detected.\n  [fallacy_penalty          ] +-0.000  \u2014 No fallacies detected.\n  [step_penalty             ] -0.030  \u2014 3 rounds used (\u22120.03 step penalty)."
+  },
+  {
+    "agent": "baseline",
+    "topic": "hard",
+    "reward": 0.01,
+    "breakdown": "Rubric Breakdown:\n  [factual_accuracy         ] ++0.000  \u2014 0/1 cited facts are correct.\n  [evidence_quality         ] ++0.000  \u2014 0/9 evidence keywords present.\n  [logical_coherence        ] ++0.000  \u2014 0 logical connectives detected.\n  [belief_updating          ] ++0.000  \u2014 Position was not updated.\n  [concession_credit        ] ++0.000  \u2014 No concession made.\n  [hallucination_penalty    ] -0.300  \u2014 1 hallucinated facts penalised.\n  [fallacy_penalty          ] -0.200  \u2014 1 logical fallacies penalised.\n  [step_penalty             ] -0.030  \u2014 3 rounds used (\u22120.03 step penalty)."
+  },
+  {
+    "agent": "optimal",
+    "topic": "hard",
+    "reward": 0.6522,
+    "breakdown": "Rubric Breakdown:\n  [factual_accuracy         ] ++0.350  \u2014 2/2 cited facts are correct.\n  [evidence_quality         ] ++0.022  \u2014 1/9 evidence keywords present.\n  [logical_coherence        ] ++0.150  \u2014 7 logical connectives detected.\n  [belief_updating          ] ++0.100  \u2014 Position was updated under counter-evidence.\n  [concession_credit        ] ++0.050  \u2014 Sub-point conceded gracefully.\n  [hallucination_penalty    ] +-0.000  \u2014 No hallucinations detected.\n  [fallacy_penalty          ] +-0.000  \u2014 No fallacies detected.\n  [step_penalty             ] -0.030  \u2014 3 rounds used (\u22120.03 step penalty)."
+  }
+]

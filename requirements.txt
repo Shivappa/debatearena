@@ -1,0 +1,34 @@
+# DebateArenaEnv — Python dependencies
+
+# Core environment (replace with real package when openenv releases)
+# openenv>=0.3.0
+
+# Web server (local dev / HF Space)
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
+# Training
+torch>=2.1.0
+transformers>=4.40.0
+trl>=0.8.6
+datasets>=2.18.0
+accelerate>=0.28.0
+peft>=0.10.0
+
+# Optional fast training (Colab / GPU)
+# unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+
+# App / UI
+gradio>=4.26.0
+
+# HTTP client
+httpx>=0.27.0
+
+# Evaluation & plotting
+matplotlib>=3.8.0
+numpy>=1.26.0
+
+# Utilities
+wandb>=0.16.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
