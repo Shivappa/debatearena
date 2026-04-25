@@ -20,8 +20,10 @@ app_port: 7860
 
 | Resource | Link |
 |----------|------|
-| HuggingFace Space | *(add after deployment)* |
-| Training Notebook (Colab) | [training_colab.ipynb](./training_colab.ipynb) |
+| 🚀 HuggingFace Space (live) | [Shivacode/debatearena](https://huggingface.co/spaces/Shivacode/debatearena) |
+| 🤖 Fine-tuned Model | [Shivacode/debate-arena-llama3-8b](https://huggingface.co/Shivacode/debate-arena-llama3-8b) |
+| 💻 GitHub Repo | [Shivappa/debatearena](https://github.com/Shivappa/debatearena) |
+| 📓 Training Notebook (Colab) | [training_colab.ipynb](./training_colab.ipynb) |
 
 ---
 
@@ -95,7 +97,40 @@ client/                        ← Agents + UI (client side)
 
 ---
 
-## 3. Baseline vs Optimal Results (Verified Live)
+## 3. Training Results
+
+### SFT Training (Phase 1 — Completed ✅)
+
+| Step | Loss | Reward (post-eval) |
+|------|------|-------------------|
+| 10 | 1.2116 | — |
+| 20 | 0.0574 | — |
+| 30 | 0.0105 | ~0.31 |
+| 60 | 0.0096 | ~0.42 |
+| 120 | 0.0096 | **0.470** |
+
+Fast convergence: loss dropped from **1.21 → 0.0096** by step 30 and stayed stable.  
+Post-SFT reward = **0.470** (all topics) — measured on live DebateArenaEnv.
+
+### Reward Progression (Baseline → SFT → RL-Optimal)
+
+![reward curve](assets/reward_curve.png)
+
+| Checkpoint | easy | medium | hard |
+|-----------|------|--------|------|
+| baseline | 0.010 | 0.010 | 0.010 |
+| sft-step-30 | 0.31 | 0.31 | 0.31 |
+| sft-step-60 | 0.42 | 0.42 | 0.42 |
+| **sft-step-120** | **0.470** | **0.470** | **0.470** |
+| rl-optimal | 0.663 | 0.655 | 0.683 |
+
+### Rubric Score Breakdown
+
+![rubric breakdown](assets/rubric_breakdown.png)
+
+---
+
+## 4. Baseline vs LLM Agent (Verified Live)
 
 | Topic | Baseline | LLM Agent | Lift |
 |-------|----------|-----------|------|
@@ -103,12 +138,14 @@ client/                        ← Agents + UI (client side)
 | medium | 0.010 | 0.307 | +0.297 |
 | **hard** | 0.010 | **0.683** | **+0.673** |
 
+> LLM Agent uses fine-tuned model: `Shivacode/debate-arena-llama3-8b` via HF serverless router.
+
 ---
 
-## 4. Running Locally
+## 5. Running Locally
 
 ```bash
-cd hackathon-finale
+cd debatearena
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.server.txt
 
@@ -118,8 +155,9 @@ uvicorn server.app:app --port 8000
 # Start Gradio UI
 python client/ui.py
 
-# Run LLM multi-agent episode
-MODEL_NAME=meta-llama/Llama-3.1-8B-Instruct API_KEY=<hf_token> python -m client.llm_multiagent_runner
+# Run LLM multi-agent episode using fine-tuned model
+API_KEY=<hf_token> python -m client.llm_multiagent_runner
+# MODEL_NAME defaults to Shivacode/debate-arena-llama3-8b via HF serverless router
 ```
 
 ### Docker
@@ -134,18 +172,19 @@ docker run -p 7860:7860 -p 8000:8000 debatearena:latest
 
 ---
 
-## 5. Training Pipeline
+## 6. Training Pipeline
 
 See [training_colab.ipynb](./training_colab.ipynb) for the Unsloth + HF TRL pipeline:
 
 1. **Trajectory collection** — LLM agent episodes saved to `assets/training_trajectories.jsonl`
-2. **SFT** — Fine-tune `Llama-3.1-8B-Instruct` on winning trajectories (Unsloth 4-bit, ~2hr on A100)
-3. **RL** — GRPO with `DebateArenaRubric` as reward function
-4. **Curriculum** — Auto-escalates easy -> medium -> hard as agent improves
+2. **SFT** ✅ — Fine-tuned `Llama-3.1-8B-Instruct` on winning trajectories (Unsloth 4-bit, 120 steps, loss 1.21→0.0096)
+3. **RL** — GRPO with `DebateArenaRubric` as reward function (connects to live env at `https://shivacode-debatearena.hf.space`)
+4. **Curriculum** — Auto-escalates easy → medium → hard as agent improves
+5. **Published** ✅ — Model pushed to [Shivacode/debate-arena-llama3-8b](https://huggingface.co/Shivacode/debate-arena-llama3-8b)
 
 ---
 
-## 6. OpenEnv Compliance
+## 7. OpenEnv Compliance
 
 - ✅ `DebateArenaEnv` extends `_OpenEnvBase` (shim when openenv not installed)
 - ✅ `reset(topic_id)` returns observation dict
