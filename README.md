@@ -205,3 +205,11 @@ See [training_colab.ipynb](./training_colab.ipynb) for the Unsloth + HF TRL pipe
 - ✅ `openenv.yaml` with `entry_point: server.env:DebateArenaEnv`
 - ✅ FastAPI on port 8000: POST /reset, POST /step, GET /state, GET /health, GET /manifest
 - ✅ 10 MCP tools registered in manifest
+
+## Current Limitations & Next Steps
+- **Fact bank is static** (12 facts across 3 topics) — sufficient for RL training
+  signal but not production-grade
+- **Next**: Replace with Wikipedia API + NLI-based verification for open-domain
+  fact checking
+- The RL reward rubric is **domain-agnostic** — plugging in a dynamic fact 
+  checker requires only changing `tool_verify_fact()` in `server/tools.py`
